@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Hanken_Grotesk } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/navbar/Navbar";
 
 const hankenGrotesk = Hanken_Grotesk({
   subsets: ["latin"],
@@ -21,8 +22,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={` ${hankenGrotesk.variable} ${hankenGrotesk.className} antialiased`}
+        className={` ${hankenGrotesk.variable} ${hankenGrotesk.className} antialiased bg-[#0E100F] text-white`}
       >
+        <Navbar />
         {children}
       </body>
     </html>
