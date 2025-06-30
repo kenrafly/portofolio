@@ -100,7 +100,7 @@ const WhyMe = () => {
   }, []);
 
   return (
-    <div className="flex flex-col items-center bg-[#0E100F] min-h-screen text-white p-6 overflow-hidden">
+    <div className="flex flex-col items-center bg-[#0E100F] text-white p-6 overflow-hidden border-b border-white ">
       {/* Top Bar */}
       <div
         ref={topBarRef}

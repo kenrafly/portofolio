@@ -36,7 +36,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <div className="relative flex flex-col items-center justify-center h-screen text-center overflow-hidden max-md:p-5">
+    <div className="relative flex flex-col items-center justify-center h-screen text-center overflow-hidden max-md:p-5 border-b ">
       {/* Floating SVGs */}
       <Image
         ref={(el) => {
@@ -46,7 +46,7 @@ const Hero = () => {
         alt="Build"
         width={70}
         height={70}
-        className="absolute top-70 left-5 md:top-15 md:left-58 z-40"
+        className="absolute top-70 left-5 md:top-15 md:left-108 z-40"
       />
       <Image
         ref={(el) => {
@@ -56,7 +56,7 @@ const Hero = () => {
         alt="Build"
         width={70}
         height={70}
-        className="absolute top-68 right-15 md:top-24 md:right-78  z-40"
+        className="absolute top-68 right-15 md:top-24 md:right-108  z-40"
       />
       <Image
         ref={(el) => {
@@ -66,7 +66,7 @@ const Hero = () => {
         alt="Build"
         width={70}
         height={70}
-        className="absolute bottom-80 md:bottom-10 md:left-58 z-40"
+        className="absolute bottom-80 md:bottom-40 md:left-88 z-40"
       />
 
       {/* Main Text */}
