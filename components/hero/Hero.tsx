@@ -36,7 +36,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <div className="relative flex flex-col items-center justify-center text-center overflow-hidden max-md: p-5">
+    <div className="relative flex flex-col items-center justify-center h-screen text-center overflow-hidden max-md:p-5">
       {/* Floating SVGs */}
       <Image
         ref={(el) => {
@@ -46,7 +46,7 @@ const Hero = () => {
         alt="Build"
         width={70}
         height={70}
-        className="absolute top-15 left-58 z-40"
+        className="absolute top-70 left-5 md:top-15 md:left-58 z-40"
       />
       <Image
         ref={(el) => {
@@ -56,7 +56,7 @@ const Hero = () => {
         alt="Build"
         width={70}
         height={70}
-        className="absolute top-24 right-78  z-40"
+        className="absolute top-68 right-15 md:top-24 md:right-78  z-40"
       />
       <Image
         ref={(el) => {
@@ -66,31 +66,31 @@ const Hero = () => {
         alt="Build"
         width={70}
         height={70}
-        className="absolute bottom-10 left-58 z-40"
+        className="absolute bottom-80 md:bottom-10 md:left-58 z-40"
       />
 
       {/* Main Text */}
       <div className="text-left tracking-tighter z-20">
-        <h1 className=" text-5xl md:text-7xl font-bold text-[#A374FF] flex">
+        <h1 className=" text-6xl md:text-7xl font-bold text-[#A374FF] flex">
           FULL-STACK{" "}
           <span className="text-white text-sm font-light justify-center ml-2">
             {`// based on indonesia`}
           </span>
         </h1>
-        <h1 className=" text-5xl md:text-7xl font-bold text-[#FFD074]">
+        <h1 className=" text-6xl md:text-7xl font-bold text-[#FFD074]">
           WEB DEVELOPER
         </h1>
-        <h1 className=" text-5xl md:text-7xl font-bold">SPECIALIZING IN</h1>
-        <h1 className=" text-5xl md:text-7xl font-bold text-[#17F1D1]">
+        <h1 className=" text-6xl md:text-7xl font-bold">SPECIALIZING IN</h1>
+        <h1 className=" text-6xl md:text-7xl font-bold text-[#17F1D1]">
           REACT JS <span className="text-white">&</span>
         </h1>
-        <h1 className=" text-5xl md:text-7xl font-bold text-[#17F1D1] flex">
+        <h1 className=" text-6xl md:text-7xl font-bold text-[#17F1D1] flex">
           NEXT JS.{" "}
           <span className="text-white text-sm font-light justify-center ml-2 max-w-1/2">
             {`// speed, UX, responsive, scalable, SEO, real business needs`}
           </span>
         </h1>
-        <p className="text-lg md:text-2xl mt-4 text-white font-light max-w-2xl text-center">
+        <p className="text-2xl md:text-2xl mt-4 text-white font-light max-w-2xl text-center">
           I create <span className="text-[#A374FF]">modern</span>,{" "}
           <span className="text-[#FBCF74]">responsive</span>, and{" "}
           <span className="text-[#FBCF74]">high-performing</span> websites, from{" "}
