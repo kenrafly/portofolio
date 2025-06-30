@@ -42,7 +42,7 @@ const Testimonial = () => {
       ref={containerRef}
       className="flex flex-col border-t border-white p-4 overflow-hidden"
     >
-      <h1 className="text-3xl md:text-2xl lg:text-6xl font-bold text-left">
+      <h1 className="text-3xl md:text-2xl lg:text-5xl font-bold text-left">
         What my clients say
       </h1>
       <div className="flex flex-col md:flex-row items-center p-6 gap-7">
