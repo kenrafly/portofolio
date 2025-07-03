@@ -1,3 +1,4 @@
+import Footer from "@/components/footer/Footer";
 import MyProjects from "@/components/my-projects/MyProjects";
 import SplashCursor from "@/components/ui/text";
 import React from "react";
@@ -7,6 +8,7 @@ const page = () => {
     <div>
       <SplashCursor />
       <MyProjects />
+      <Footer />
     </div>
   );
 };

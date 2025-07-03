@@ -1,4 +1,5 @@
 import ContactForm from "@/components/contact-form/ContactForm";
+import Footer from "@/components/footer/Footer";
 import SplashCursor from "@/components/ui/text";
 import React from "react";
 
@@ -13,6 +14,7 @@ const page = () => {
         out. Together, we can turn ideas into reality.
       </p>
       <ContactForm />
+      <Footer />
     </div>
   );
 };
