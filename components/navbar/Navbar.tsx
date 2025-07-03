@@ -131,18 +131,6 @@ const Navbar = () => {
             <IoBriefcaseOutline />
             <span>My Projects</span>
           </Link>
-
-          <Link
-            href="/about"
-            className={`flex items-center space-x-2 px-4 py-2 rounded-4xl transition-all duration-300 ${
-              pathname === "/about"
-                ? "bg-white text-black"
-                : "hover:bg-white hover:text-black"
-            }`}
-          >
-            <MdOutlinePerson />
-            <span>About</span>
-          </Link>
         </li>
         {/* Desktop contact */}
         <li className="hidden md:flex items-center space-x-3 border-white border-1 p-2 rounded-4xl">

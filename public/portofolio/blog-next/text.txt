@@ -1,0 +1,2 @@
+https://next-blog-worse.vercel.app/
+https://github.com/kenrafly/next-blog-worse

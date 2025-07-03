@@ -1,0 +1,2 @@
+zentry-ruby-rho.vercel.app
+https://github.com/kenrafly/zentry

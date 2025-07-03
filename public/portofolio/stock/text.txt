@@ -1,0 +1,2 @@
+https://github.com/kenrafly/StockAnalysis
+https://stock-analysis-beryl.vercel.app/analyze
