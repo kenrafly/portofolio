@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://kenrafly.com
+
+# Sitemaps
+Sitemap: https://kenrafly.com/sitemap.xml
