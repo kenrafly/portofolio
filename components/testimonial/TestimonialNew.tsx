@@ -29,123 +29,151 @@ const Testimonial = () => {
           trigger: containerRef.current,
           start: "top bottom",
           end: "bottom top",
-          scrub: 1
-        }
+          scrub: 1,
+        },
       });
 
       // Advanced title animation with character splitting
       const titleText = titleRef.current?.textContent || "";
       if (titleRef.current) {
-        titleRef.current.innerHTML = titleText.split("").map(char => 
-          `<span class="title-char inline-block">${char === " " ? "&nbsp;" : char}</span>`
-        ).join("");
+        titleRef.current.innerHTML = titleText
+          .split("")
+          .map(
+            (char) =>
+              `<span class="title-char inline-block">${
+                char === " " ? "&nbsp;" : char
+              }</span>`
+          )
+          .join("");
       }
 
       const titleChars = gsap.utils.toArray(".title-char") as Element[];
-      
-      gsap.fromTo(titleChars, {
-        y: 100,
-        opacity: 0,
-        rotationX: -90,
-        filter: "blur(10px)"
-      }, {
-        y: 0,
-        opacity: 1,
-        rotationX: 0,
-        filter: "blur(0px)",
-        stagger: 0.03,
-        duration: 0.8,
-        ease: "back.out(1.7)",
-        scrollTrigger: {
-          trigger: titleRef.current,
-          start: "top 85%",
-          end: "top 50%",
-          scrub: 1.5
+
+      gsap.fromTo(
+        titleChars,
+        {
+          y: 100,
+          opacity: 0,
+          rotationX: -90,
+          filter: "blur(10px)",
+        },
+        {
+          y: 0,
+          opacity: 1,
+          rotationX: 0,
+          filter: "blur(0px)",
+          stagger: 0.03,
+          duration: 0.8,
+          ease: "back.out(1.7)",
+          scrollTrigger: {
+            trigger: titleRef.current,
+            start: "top 85%",
+            end: "top 50%",
+            scrub: 1.5,
+          },
         }
-      });
+      );
 
       // Profile image 3D reveal with magnetic effect
-      gsap.fromTo(profileRef.current, {
-        scale: 0,
-        rotation: -45,
-        opacity: 0,
-        filter: "blur(20px)"
-      }, {
-        scale: 1,
-        rotation: 0,
-        opacity: 1,
-        filter: "blur(0px)",
-        duration: 1.2,
-        ease: "elastic.out(1, 0.5)",
-        scrollTrigger: {
-          trigger: profileRef.current,
-          start: "top 80%",
-          end: "top 40%",
-          scrub: 2
+      gsap.fromTo(
+        profileRef.current,
+        {
+          scale: 0,
+          rotation: -45,
+          opacity: 0,
+          filter: "blur(20px)",
+        },
+        {
+          scale: 1,
+          rotation: 0,
+          opacity: 1,
+          filter: "blur(0px)",
+          duration: 1.2,
+          ease: "elastic.out(1, 0.5)",
+          scrollTrigger: {
+            trigger: profileRef.current,
+            start: "top 80%",
+            end: "top 40%",
+            scrub: 2,
+          },
         }
-      });
+      );
 
       // Quote text character-by-character reveal
       const quoteText = quoteRef.current?.textContent || "";
       if (quoteRef.current) {
-        quoteRef.current.innerHTML = quoteText.split("").map((char, index) => {
-          const isHighlight = char === '"' || (index > 0 && quoteText[index-1] === '"');
-          return `<span class="quote-char ${isHighlight ? 'highlight-char' : ''} inline-block">${char === " " ? "&nbsp;" : char}</span>`;
-        }).join("");
+        quoteRef.current.innerHTML = quoteText
+          .split("")
+          .map((char, index) => {
+            const isHighlight =
+              char === '"' || (index > 0 && quoteText[index - 1] === '"');
+            return `<span class="quote-char ${
+              isHighlight ? "highlight-char" : ""
+            } inline-block">${char === " " ? "&nbsp;" : char}</span>`;
+          })
+          .join("");
       }
 
       const quoteChars = gsap.utils.toArray(".quote-char") as Element[];
-      
-      gsap.fromTo(quoteChars, {
-        y: 50,
-        opacity: 0,
-        rotationX: -45,
-        filter: "blur(5px)"
-      }, {
-        y: 0,
-        opacity: 1,
-        rotationX: 0,
-        filter: "blur(0px)",
-        stagger: 0.01,
-        duration: 0.6,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: quoteRef.current,
-          start: "top 75%",
-          end: "top 25%",
-          scrub: 1.5
+
+      gsap.fromTo(
+        quoteChars,
+        {
+          y: 50,
+          opacity: 0,
+          rotationX: -45,
+          filter: "blur(5px)",
+        },
+        {
+          y: 0,
+          opacity: 1,
+          rotationX: 0,
+          filter: "blur(0px)",
+          stagger: 0.01,
+          duration: 0.6,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: quoteRef.current,
+            start: "top 75%",
+            end: "top 25%",
+            scrub: 1.5,
+          },
         }
-      });
+      );
 
       // Author info slide-up animation
-      gsap.fromTo(authorRef.current, {
-        y: 80,
-        opacity: 0,
-        scale: 0.8,
-        filter: "blur(10px)"
-      }, {
-        y: 0,
-        opacity: 1,
-        scale: 1,
-        filter: "blur(0px)",
-        duration: 1,
-        ease: "back.out(1.5)",
-        scrollTrigger: {
-          trigger: authorRef.current,
-          start: "top 85%",
-          end: "top 55%",
-          scrub: 1.5
+      gsap.fromTo(
+        authorRef.current,
+        {
+          y: 80,
+          opacity: 0,
+          scale: 0.8,
+          filter: "blur(10px)",
+        },
+        {
+          y: 0,
+          opacity: 1,
+          scale: 1,
+          filter: "blur(0px)",
+          duration: 1,
+          ease: "back.out(1.5)",
+          scrollTrigger: {
+            trigger: authorRef.current,
+            start: "top 85%",
+            end: "top 55%",
+            scrub: 1.5,
+          },
         }
-      });
+      );
 
       // Floating particles animation
       const particles = gsap.utils.toArray(".floating-particle") as Element[];
       particles.forEach((particle, index) => {
-        const yOffset = (index % 3 - 1) * 30;
-        const xOffset = (index % 3 - 1) * 20;
+        const yOffset = ((index % 3) - 1) * 30;
+        const xOffset = ((index % 3) - 1) * 20;
         const rotationValue = (index % 4) * 90;
         const duration = 4 + (index % 3);
-        
+
         gsap.to(particle, {
           y: yOffset,
           x: xOffset,
@@ -154,36 +182,35 @@ const Testimonial = () => {
           repeat: -1,
           yoyo: true,
           ease: "sine.inOut",
-          delay: index * 0.5
+          delay: index * 0.5,
         });
       });
 
       // Interactive hover effects for profile image
       const profileImage = profileRef.current;
       if (profileImage) {
-        profileImage.addEventListener('mouseenter', () => {
+        profileImage.addEventListener("mouseenter", () => {
           gsap.to(profileImage, {
             scale: 1.1,
             rotationY: 15,
             z: 50,
             boxShadow: "0 25px 50px rgba(130, 93, 204, 0.4)",
             duration: 0.6,
-            ease: "back.out(2)"
+            ease: "back.out(2)",
           });
         });
 
-        profileImage.addEventListener('mouseleave', () => {
+        profileImage.addEventListener("mouseleave", () => {
           gsap.to(profileImage, {
             scale: 1,
             rotationY: 0,
             z: 0,
             boxShadow: "0 10px 25px rgba(0,0,0,0.2)",
             duration: 0.6,
-            ease: "power2.out"
+            ease: "power2.out",
           });
         });
       }
-
     }, containerRef);
 
     return () => ctx.revert();
@@ -195,7 +222,7 @@ const Testimonial = () => {
       className="relative min-h-screen bg-gradient-to-br from-[#0A0A0A] via-[#1A1A1A] to-[#0A0A0A] text-white overflow-hidden border-t border-white/10"
     >
       {/* Animated Background */}
-      <div 
+      <div
         ref={backgroundRef}
         className="absolute inset-0 opacity-20"
         style={{
@@ -205,7 +232,7 @@ const Testimonial = () => {
             radial-gradient(circle at 40% 80%, #17F1D1 0%, transparent 50%)
           `,
           backgroundSize: "200% 200%",
-          backgroundPosition: "50% 0%"
+          backgroundPosition: "50% 0%",
         }}
       />
 
@@ -224,7 +251,7 @@ const Testimonial = () => {
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 py-20">
         {/* Modern Title */}
-        <h1 
+        <h1
           ref={titleRef}
           className="text-4xl md:text-6xl lg:text-8xl font-black text-left mb-16 bg-gradient-to-r from-white via-purple-400 to-white bg-clip-text text-transparent leading-tight"
         >
@@ -235,13 +262,10 @@ const Testimonial = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* Profile Section */}
           <div className="lg:col-span-4 flex justify-center lg:justify-start">
-            <div 
-              ref={profileRef}
-              className="relative group perspective-1000"
-            >
+            <div ref={profileRef} className="relative group perspective-1000">
               {/* Glow Effect */}
               <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-cyan-400 rounded-full blur-xl opacity-30 group-hover:opacity-60 transition-opacity duration-500 scale-110" />
-              
+
               {/* Profile Image Container */}
               <div className="relative w-60 h-60 md:w-80 md:h-80 transform-gpu">
                 <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-cyan-400/20 rounded-full animate-pulse" />
@@ -251,7 +275,7 @@ const Testimonial = () => {
                   fill
                   className="object-cover rounded-full shadow-2xl border-4 border-white/10 group-hover:border-purple-400/50 transition-all duration-500"
                 />
-                
+
                 {/* Floating Ring */}
                 <div className="absolute inset-0 border-2 border-gradient-to-r from-purple-400 to-cyan-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-spin-slow" />
               </div>
@@ -262,17 +286,28 @@ const Testimonial = () => {
           <div className="lg:col-span-8 space-y-8">
             <div className="relative">
               {/* Quote Background Accent */}
-              <div className="absolute -top-4 -left-4 text-8xl text-purple-400/20 font-bold">&ldquo;</div>
-              
-              <h2 
+              <div className="absolute -top-4 -left-4 text-8xl text-purple-400/20 font-bold">
+                &ldquo;
+              </div>
+
+              <h2
                 ref={quoteRef}
                 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold leading-relaxed relative z-10"
               >
-                Working with Rafly was a game-changer. He built a lightning-fast, professional website that made my <span className="text-purple-400 glow-text">business</span> more visible and profitable. What impressed me most is how he treated my project like it was his own with <span className="text-purple-400 glow-text">care,</span> <span className="text-yellow-400 glow-text">strategy,</span> <span className="text-cyan-400 glow-text">and passion.</span>
+                Working with Rafly was a game-changer. He built a
+                lightning-fast, professional website that made my{" "}
+                <span className="text-purple-400 glow-text">business</span> more
+                visible and profitable. What impressed me most is how he treated
+                my project like it was his own with{" "}
+                <span className="text-purple-400 glow-text">care,</span>{" "}
+                <span className="text-yellow-400 glow-text">strategy,</span>{" "}
+                <span className="text-cyan-400 glow-text">and passion.</span>
               </h2>
-              
+
               {/* Quote End Accent */}
-              <div className="absolute -bottom-4 -right-4 text-8xl text-cyan-400/20 font-bold">&rdquo;</div>
+              <div className="absolute -bottom-4 -right-4 text-8xl text-cyan-400/20 font-bold">
+                &rdquo;
+              </div>
             </div>
 
             {/* Author Info */}
@@ -293,15 +328,21 @@ const Testimonial = () => {
                   </p>
                 </div>
               </div>
-              
+
               {/* Rating Stars */}
               <div className="flex items-center gap-2 mt-4">
                 {[...Array(5)].map((_, i) => (
-                  <div key={i} className="w-6 h-6 text-yellow-400 animate-pulse" style={{animationDelay: `${i * 0.2}s`}}>
+                  <div
+                    key={i}
+                    className="w-6 h-6 text-yellow-400 animate-pulse"
+                    style={{ animationDelay: `${i * 0.2}s` }}
+                  >
                     ⭐
                   </div>
                 ))}
-                <span className="ml-2 text-gray-300 font-medium">5.0 Rating</span>
+                <span className="ml-2 text-gray-300 font-medium">
+                  5.0 Rating
+                </span>
               </div>
             </div>
           </div>
@@ -310,15 +351,21 @@ const Testimonial = () => {
         {/* Bottom Stats */}
         <div className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
           <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-purple-400/50 transition-all duration-500 group">
-            <div className="text-4xl font-black text-purple-400 mb-2 group-hover:scale-110 transition-transform duration-300">100%</div>
+            <div className="text-4xl font-black text-purple-400 mb-2 group-hover:scale-110 transition-transform duration-300">
+              100%
+            </div>
             <div className="text-gray-300">Client Satisfaction</div>
           </div>
           <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-yellow-400/50 transition-all duration-500 group">
-            <div className="text-4xl font-black text-yellow-400 mb-2 group-hover:scale-110 transition-transform duration-300">50+</div>
+            <div className="text-4xl font-black text-yellow-400 mb-2 group-hover:scale-110 transition-transform duration-300">
+              50+
+            </div>
             <div className="text-gray-300">Projects Delivered</div>
           </div>
           <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-cyan-400/50 transition-all duration-500 group">
-            <div className="text-4xl font-black text-cyan-400 mb-2 group-hover:scale-110 transition-transform duration-300">24/7</div>
+            <div className="text-4xl font-black text-cyan-400 mb-2 group-hover:scale-110 transition-transform duration-300">
+              24/7
+            </div>
             <div className="text-gray-300">Support Available</div>
           </div>
         </div>
@@ -336,8 +383,12 @@ const Testimonial = () => {
           animation: spin 8s linear infinite;
         }
         @keyframes spin {
-          from { transform: rotate(0deg); }
-          to { transform: rotate(360deg); }
+          from {
+            transform: rotate(0deg);
+          }
+          to {
+            transform: rotate(360deg);
+          }
         }
       `}</style>
     </div>

@@ -22,9 +22,9 @@ const createAnimatedText = (text: string, className: string = "") => {
           <span
             key={charIndex}
             className="char inline-block"
-            style={{ 
+            style={{
               color: color,
-              textShadow: `0 0 20px ${color}40`
+              textShadow: `0 0 20px ${color}40`,
             }}
           >
             {char}
@@ -53,20 +53,20 @@ const WhyMe = () => {
           trigger: sectionRef.current,
           start: "top bottom",
           end: "bottom top",
-          scrub: 1
-        }
+          scrub: 1,
+        },
       });
 
       // Advanced text reveal with magnetic effect
       const chars = gsap.utils.toArray(".char") as Element[];
-      
+
       // Initial state
       gsap.set(chars, {
         y: 100,
         opacity: 0,
         rotationX: -90,
         transformOrigin: "center bottom",
-        filter: "blur(10px)"
+        filter: "blur(10px)",
       });
 
       // Main text animation
@@ -76,7 +76,7 @@ const WhyMe = () => {
           start: "top 85%",
           end: "top 20%",
           scrub: 1.5,
-        }
+        },
       });
 
       tl.to(chars, {
@@ -87,40 +87,42 @@ const WhyMe = () => {
         stagger: {
           amount: 1.2,
           from: "start",
-          ease: "power2.out"
+          ease: "power2.out",
         },
         duration: 1,
-        ease: "back.out(1.4)"
+        ease: "back.out(1.4)",
       });
 
       // Magnetic hover effect for characters
       chars.forEach((char, index) => {
         const element = char as Element;
-        element.addEventListener('mouseenter', () => {
-          const rotationValue = (index % 5 - 2) * 15; // -30, -15, 0, 15, 30
+        element.addEventListener("mouseenter", () => {
+          const rotationValue = ((index % 5) - 2) * 15; // -30, -15, 0, 15, 30
           gsap.to(element, {
             scale: 1.3,
             y: -10,
             rotationZ: rotationValue,
             duration: 0.3,
-            ease: "back.out(3)"
+            ease: "back.out(3)",
           });
         });
 
-        element.addEventListener('mouseleave', () => {
+        element.addEventListener("mouseleave", () => {
           gsap.to(element, {
             scale: 1,
             y: 0,
             rotationZ: 0,
             duration: 0.5,
-            ease: "elastic.out(1, 0.3)"
+            ease: "elastic.out(1, 0.3)",
           });
         });
       });
 
       // Highlight words with morphing effect
-      const highlightWords = gsap.utils.toArray(".highlight .char") as Element[];
-      
+      const highlightWords = gsap.utils.toArray(
+        ".highlight .char"
+      ) as Element[];
+
       gsap.to(highlightWords, {
         color: "#00FFC2",
         textShadow: "0 0 30px #00FFC2, 0 0 60px #00FFC2",
@@ -132,46 +134,50 @@ const WhyMe = () => {
           trigger: textRef.current,
           start: "top 60%",
           end: "top 30%",
-          scrub: 2
-        }
+          scrub: 2,
+        },
       });
 
       // Modern top bar animation with elastic effects
       const topElements = topBarRef.current?.children || [];
-      
-      gsap.fromTo(topElements, {
-        y: -50,
-        opacity: 0,
-        rotationY: 45,
-        scale: 0.8,
-        filter: "blur(5px)"
-      }, {
-        y: 0,
-        opacity: 1,
-        rotationY: 0,
-        scale: 1,
-        filter: "blur(0px)",
-        stagger: 0.15,
-        duration: 1.2,
-        ease: "elastic.out(1, 0.5)",
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top 90%",
-          end: "top 70%",
-          scrub: 1
+
+      gsap.fromTo(
+        topElements,
+        {
+          y: -50,
+          opacity: 0,
+          rotationY: 45,
+          scale: 0.8,
+          filter: "blur(5px)",
+        },
+        {
+          y: 0,
+          opacity: 1,
+          rotationY: 0,
+          scale: 1,
+          filter: "blur(0px)",
+          stagger: 0.15,
+          duration: 1.2,
+          ease: "elastic.out(1, 0.5)",
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top 90%",
+            end: "top 70%",
+            scrub: 1,
+          },
         }
-      });
+      );
 
       // Floating elements animation
       const floatingElements = floatingElementsRef.current?.children || [];
-      
+
       Array.from(floatingElements).forEach((element, index) => {
         const el = element as Element;
-        const yOffset = (index % 3 - 1) * 30; // -30, 0, or 30
-        const xOffset = (index % 3 - 1) * 20; // -20, 0, or 20
+        const yOffset = ((index % 3) - 1) * 30; // -30, 0, or 30
+        const xOffset = ((index % 3) - 1) * 20; // -20, 0, or 20
         const rotationValue = (index % 4) * 90 - 180; // -180, -90, 0, or 90
         const duration = 3 + (index % 4); // 3 to 6 seconds
-        
+
         gsap.to(el, {
           y: yOffset,
           x: xOffset,
@@ -180,34 +186,34 @@ const WhyMe = () => {
           repeat: -1,
           yoyo: true,
           ease: "sine.inOut",
-          delay: index * 0.5
+          delay: index * 0.5,
         });
 
         // Interactive floating elements
-        element.addEventListener('mouseenter', () => {
+        element.addEventListener("mouseenter", () => {
           gsap.to(element, {
             scale: 1.5,
             rotation: "+=360",
             duration: 0.8,
-            ease: "back.out(2)"
+            ease: "back.out(2)",
           });
         });
 
-        element.addEventListener('mouseleave', () => {
+        element.addEventListener("mouseleave", () => {
           gsap.to(element, {
             scale: 1,
             duration: 0.8,
-            ease: "elastic.out(1, 0.3)"
+            ease: "elastic.out(1, 0.3)",
           });
         });
       });
 
       // Social icons advanced hover effects
       const socialIcons = topBarRef.current?.querySelectorAll("a") || [];
-      
+
       socialIcons.forEach((icon) => {
         const element = icon as Element;
-        element.addEventListener('mouseenter', () => {
+        element.addEventListener("mouseenter", () => {
           gsap.to(element, {
             scale: 1.4,
             rotationY: 360,
@@ -215,34 +221,33 @@ const WhyMe = () => {
             borderRadius: "50%",
             padding: "8px",
             duration: 0.6,
-            ease: "back.out(2)"
+            ease: "back.out(2)",
           });
         });
 
-        element.addEventListener('mouseleave', () => {
+        element.addEventListener("mouseleave", () => {
           gsap.to(element, {
             scale: 1,
             rotationY: 0,
             backgroundColor: "transparent",
             padding: "0px",
             duration: 0.6,
-            ease: "elastic.out(1, 0.3)"
+            ease: "elastic.out(1, 0.3)",
           });
         });
       });
-
     }, sectionRef);
 
     return () => ctx.revert();
   }, []);
 
   return (
-    <div 
+    <div
       ref={sectionRef}
       className="relative flex flex-col items-center bg-[#0E100F] text-white p-6 overflow-hidden border-b border-white min-h-screen"
     >
       {/* Animated Background */}
-      <div 
+      <div
         ref={backgroundRef}
         className="absolute inset-0 opacity-30"
         style={{
@@ -252,12 +257,15 @@ const WhyMe = () => {
             radial-gradient(circle at 40% 80%, #17F1D1 0%, transparent 50%)
           `,
           backgroundSize: "200% 200%",
-          backgroundPosition: "50% 0%"
+          backgroundPosition: "50% 0%",
         }}
       />
 
       {/* Floating Elements */}
-      <div ref={floatingElementsRef} className="absolute inset-0 pointer-events-none">
+      <div
+        ref={floatingElementsRef}
+        className="absolute inset-0 pointer-events-none"
+      >
         <div className="absolute top-20 left-20 w-4 h-4 bg-yellow-400 rounded-full opacity-60" />
         <div className="absolute top-40 right-32 w-6 h-6 border border-purple-400 rounded-full opacity-40" />
         <div className="absolute bottom-32 left-32 w-8 h-8 bg-cyan-400 opacity-30" />

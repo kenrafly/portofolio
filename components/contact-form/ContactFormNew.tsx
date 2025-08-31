@@ -304,7 +304,7 @@ const ContactForm = () => {
                   <div>
                     <p className="text-gray-400 text-sm">Email</p>
                     <p className="text-white font-medium">
-                      raflyardiansyahreal@gmail.com
+                      rafly.portfolio@gmail.com
                     </p>
                   </div>
                 </div>
@@ -315,7 +315,7 @@ const ContactForm = () => {
                   </div>
                   <div>
                     <p className="text-gray-400 text-sm">WhatsApp</p>
-                    <p className="text-white font-medium">+62 888-3093-466</p>
+                    <p className="text-white font-medium">+62 812-3456-7890</p>
                   </div>
                 </div>
 
@@ -325,7 +325,7 @@ const ContactForm = () => {
                   </div>
                   <div>
                     <p className="text-gray-400 text-sm">Social Media</p>
-                    <p className="text-white font-medium">@raflynow</p>
+                    <p className="text-white font-medium">@rafly.dev</p>
                   </div>
                 </div>
               </div>

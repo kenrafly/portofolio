@@ -36,7 +36,36 @@ const Hero = () => {
   }, []);
 
   return (
-    <div className="relative flex flex-col items-center justify-center h-screen text-center overflow-hidden max-md:p-5 border-b ">
+    <div className="relative flex flex-col items-center justify-center h-screen text-center overflow-hidden max-md:p-5 border-b bg-gradient-to-br from-[#0A0A0A] via-[#1A1A1A] to-[#0A0A0A]">
+      {/* Modern Animated Background */}
+      <div
+        className="absolute inset-0 opacity-20"
+        style={{
+          background: `
+            radial-gradient(circle at 20% 30%, #A374FF 0%, transparent 50%),
+            radial-gradient(circle at 80% 70%, #FFD074 0%, transparent 50%),
+            radial-gradient(circle at 40% 80%, #17F1D1 0%, transparent 50%)
+          `,
+          backgroundSize: "200% 200%",
+          animation: "backgroundMove 20s ease-in-out infinite",
+        }}
+      />
+
+      {/* Floating Background Particles */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-20 left-20 w-3 h-3 bg-purple-400 rounded-full opacity-40 animate-pulse" />
+        <div className="absolute top-40 right-32 w-4 h-4 border border-yellow-400 rounded-full opacity-30" />
+        <div className="absolute bottom-32 left-32 w-5 h-5 bg-cyan-400 opacity-25 animate-pulse" />
+        <div className="absolute bottom-20 right-20 w-3 h-3 border border-purple-400 opacity-35" />
+        <div className="absolute top-1/2 left-10 w-2 h-2 bg-yellow-400 rounded-full opacity-50 animate-pulse" />
+        <div className="absolute top-1/3 right-16 w-4 h-4 bg-cyan-400 opacity-20" />
+        <div className="absolute top-2/3 left-1/4 w-3 h-3 border border-yellow-400 opacity-30" />
+        <div className="absolute bottom-1/3 right-1/4 w-2 h-2 bg-purple-400 rounded-full opacity-40 animate-pulse" />
+      </div>
+
+      {/* Gradient Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-r from-purple-500/5 via-transparent to-yellow-400/5" />
+
       {/* Floating SVGs */}
       <Image
         ref={(el) => {
@@ -98,6 +127,25 @@ const Hero = () => {
           <span className="text-[#EE46D3]">to backend</span>.
         </p>
       </div>
+
+      {/* Background Animation Styles */}
+      <style jsx>{`
+        @keyframes backgroundMove {
+          0%,
+          100% {
+            background-position: 50% 0%;
+          }
+          25% {
+            background-position: 0% 50%;
+          }
+          50% {
+            background-position: 100% 100%;
+          }
+          75% {
+            background-position: 100% 0%;
+          }
+        }
+      `}</style>
     </div>
   );
 };
