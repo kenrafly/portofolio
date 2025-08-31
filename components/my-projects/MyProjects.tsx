@@ -350,33 +350,33 @@ const MyProjects = () => {
 
       {/* Floating Particles */}
       <div ref={particlesRef} className="absolute inset-0 pointer-events-none">
-        <div className="floating-particle absolute top-40 left-32 w-5 h-5 bg-purple-400 rounded-full opacity-60" />
-        <div className="floating-particle absolute top-64 right-40 w-6 h-6 border border-yellow-400 rounded-full opacity-40" />
-        <div className="floating-particle absolute bottom-48 left-48 w-7 h-7 bg-cyan-400 opacity-30" />
-        <div className="floating-particle absolute bottom-40 right-32 w-5 h-5 border border-purple-400 opacity-50" />
-        <div className="floating-particle absolute top-1/2 left-20 w-4 h-4 bg-yellow-400 rounded-full opacity-70" />
-        <div className="floating-particle absolute top-1/3 right-24 w-6 h-6 bg-cyan-400 opacity-25" />
-        <div className="floating-particle absolute top-2/3 left-1/4 w-5 h-5 border border-yellow-400 opacity-45" />
-        <div className="floating-particle absolute bottom-1/4 right-1/3 w-4 h-4 bg-purple-400 opacity-55" />
-        <div className="floating-particle absolute top-1/4 left-3/4 w-3 h-3 bg-red-400 opacity-60" />
-        <div className="floating-particle absolute bottom-1/3 left-1/3 w-4 h-4 border border-cyan-400 opacity-40" />
+        <div className="floating-particle absolute top-40 left-8 sm:left-32 w-3 sm:w-5 h-3 sm:h-5 bg-purple-400 rounded-full opacity-60" />
+        <div className="floating-particle absolute top-64 right-8 sm:right-40 w-4 sm:w-6 h-4 sm:h-6 border border-yellow-400 rounded-full opacity-40" />
+        <div className="floating-particle absolute bottom-48 left-12 sm:left-48 w-5 sm:w-7 h-5 sm:h-7 bg-cyan-400 opacity-30" />
+        <div className="floating-particle absolute bottom-40 right-8 sm:right-32 w-3 sm:w-5 h-3 sm:h-5 border border-purple-400 opacity-50" />
+        <div className="floating-particle absolute top-1/2 left-4 sm:left-20 w-3 sm:w-4 h-3 sm:h-4 bg-yellow-400 rounded-full opacity-70" />
+        <div className="floating-particle absolute top-1/3 right-6 sm:right-24 w-4 sm:w-6 h-4 sm:h-6 bg-cyan-400 opacity-25" />
+        <div className="floating-particle absolute top-2/3 left-1/4 w-3 sm:w-5 h-3 sm:h-5 border border-yellow-400 opacity-45" />
+        <div className="floating-particle absolute bottom-1/4 right-1/3 w-3 sm:w-4 h-3 sm:h-4 bg-purple-400 opacity-55" />
+        <div className="floating-particle absolute top-1/4 right-12 sm:left-3/4 w-2 sm:w-3 h-2 sm:h-3 bg-red-400 opacity-60" />
+        <div className="floating-particle absolute bottom-1/3 left-1/3 w-3 sm:w-4 h-3 sm:h-4 border border-cyan-400 opacity-40" />
       </div>
 
       {/* Gradient Overlay */}
       <div className="absolute inset-0 bg-gradient-to-r from-purple-500/5 via-transparent to-cyan-400/5" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 py-20">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-20">
         {/* Header */}
-        <div className="text-center mb-20">
+        <div className="text-center mb-12 sm:mb-20">
           <h1
             ref={titleRef}
-            className="text-4xl md:text-6xl lg:text-8xl font-black mb-6 bg-gradient-to-r from-white via-purple-400 to-white bg-clip-text text-transparent leading-tight"
+            className="text-3xl sm:text-4xl md:text-6xl lg:text-8xl font-black mb-4 sm:mb-6 bg-gradient-to-r from-white via-purple-400 to-white bg-clip-text text-transparent leading-tight"
           >
             My Projects
           </h1>
           <p
             ref={subtitleRef}
-            className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed"
+            className="text-lg sm:text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed px-4"
           >
             Innovative digital solutions crafted with cutting-edge technologies
             and attention to detail
@@ -384,11 +384,11 @@ const MyProjects = () => {
         </div>
 
         {/* Projects Grid */}
-        <div className="space-y-32">
+        <div className="space-y-16 sm:space-y-24 lg:space-y-32">
           {projects.map((project, index) => (
             <div
               key={project.title}
-              className={`project-card grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center ${
+              className={`project-card grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center ${
                 index % 2 === 1 ? "lg:flex-row-reverse" : ""
               }`}
               style={{
@@ -429,23 +429,23 @@ const MyProjects = () => {
 
               {/* Project Info */}
               <div
-                className={`space-y-6 ${index % 2 === 1 ? "lg:order-1" : ""}`}
+                className={`space-y-4 sm:space-y-6 ${index % 2 === 1 ? "lg:order-1" : ""}`}
               >
                 <div>
-                  <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+                  <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
                     {project.title}
                   </h3>
-                  <p className="text-lg text-gray-300 leading-relaxed">
+                  <p className="text-base sm:text-lg text-gray-300 leading-relaxed">
                     {project.description}
                   </p>
                 </div>
 
                 {/* Tags */}
-                <div className="flex flex-wrap gap-3">
+                <div className="flex flex-wrap gap-2 sm:gap-3">
                   {project.tags.map((tag) => (
                     <span
                       key={tag}
-                      className={`project-tag px-4 py-2 bg-gradient-to-r ${project.gradient} text-white text-sm font-medium rounded-full opacity-80 hover:opacity-100 transition-opacity duration-300`}
+                      className={`project-tag px-3 sm:px-4 py-1.5 sm:py-2 bg-gradient-to-r ${project.gradient} text-white text-xs sm:text-sm font-medium rounded-full opacity-80 hover:opacity-100 transition-opacity duration-300`}
                     >
                       {tag}
                     </span>
@@ -453,11 +453,11 @@ const MyProjects = () => {
                 </div>
 
                 {/* Action Buttons */}
-                <div className="flex gap-4 pt-4">
+                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-2 sm:pt-4">
                   <Link
                     href={project.demoLink}
                     target="_blank"
-                    className="group relative px-8 py-4 bg-gradient-to-r from-purple-500 to-cyan-500 text-white font-medium rounded-full overflow-hidden transition-all duration-500 hover:shadow-lg hover:shadow-purple-500/30 hover:scale-105"
+                    className="group relative px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-purple-500 to-cyan-500 text-white font-medium rounded-full overflow-hidden transition-all duration-500 hover:shadow-lg hover:shadow-purple-500/30 hover:scale-105 text-center text-sm sm:text-base"
                   >
                     <span className="relative z-10">View Live Demo</span>
                     <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-purple-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -465,7 +465,7 @@ const MyProjects = () => {
 
                   <Link
                     href={project.codeLink}
-                    className="group px-8 py-4 border border-white/20 text-white font-medium rounded-full hover:border-purple-400/50 hover:bg-white/5 transition-all duration-500 hover:scale-105"
+                    className="group px-6 sm:px-8 py-3 sm:py-4 border border-white/20 text-white font-medium rounded-full hover:border-purple-400/50 hover:bg-white/5 transition-all duration-500 hover:scale-105 text-center text-sm sm:text-base"
                   >
                     View Code
                   </Link>
@@ -476,18 +476,18 @@ const MyProjects = () => {
         </div>
 
         {/* Bottom CTA */}
-        <div className="mt-32 text-center">
-          <div className="bg-white/5 backdrop-blur-sm rounded-3xl p-12 border border-white/10 hover:border-purple-400/50 transition-all duration-500">
-            <h3 className="text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-purple-400 via-white to-cyan-400 bg-clip-text text-transparent">
+        <div className="mt-20 sm:mt-24 lg:mt-32 text-center">
+          <div className="bg-white/5 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-8 sm:p-12 border border-white/10 hover:border-purple-400/50 transition-all duration-500">
+            <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-purple-400 via-white to-cyan-400 bg-clip-text text-transparent">
               Ready to Start Your Project?
             </h3>
-            <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+            <p className="text-lg sm:text-xl text-gray-300 mb-6 sm:mb-8 max-w-2xl mx-auto px-4">
               Let&apos;s collaborate and create something amazing together. From
               concept to deployment, I&apos;ll bring your vision to life.
             </p>
             <Link
               href="/contact"
-              className="inline-block px-12 py-4 bg-gradient-to-r from-purple-500 to-cyan-500 text-white font-bold rounded-full hover:shadow-lg hover:shadow-purple-500/30 transition-all duration-500 hover:scale-105"
+              className="inline-block px-8 sm:px-12 py-3 sm:py-4 bg-gradient-to-r from-purple-500 to-cyan-500 text-white font-bold rounded-full hover:shadow-lg hover:shadow-purple-500/30 transition-all duration-500 hover:scale-105 text-sm sm:text-base"
             >
               Get In Touch
             </Link>
